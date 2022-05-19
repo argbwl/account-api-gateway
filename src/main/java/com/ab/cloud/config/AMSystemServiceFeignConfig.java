@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.ab.pojo.OpenAccountRequest;
 
-@FeignClient(value="feignAMSClient", url = "http://localhost:6774/apc")
+@FeignClient(value="feignAMSClient", url = "#{getAMSUrl}")
 public interface AMSystemServiceFeignConfig {
 
 	@PostMapping("/fetchNewActNum")
